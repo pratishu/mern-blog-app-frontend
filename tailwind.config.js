@@ -10,6 +10,11 @@ export default {
         secondary: "var(--secondary)",
         accent: "var(--accent)",
       },
+      fontFamily: {
+        roboto: ["roboto", "sans-sarif"],
+        poppins: ["poppins", "sans-sarif"],
+        monstt: ["Montserrat", "sans-sarif"],
+      },
     },
   },
   plugins: [],

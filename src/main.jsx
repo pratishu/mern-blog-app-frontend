@@ -13,6 +13,7 @@ import Articles from "./pages/Articles.jsx";
 import Contact from "./pages/Contact.jsx";
 import Profile from "./pages/Profile.jsx";
 import Home from "./pages/Home.jsx";
+import Faq from "./pages/Faq.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,8 +21,9 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="articles" element={<Articles />} />
-      <Route path="Contact  " element={<Contact />} />
-      <Route path="Profile" element={<Profile />} />
+      <Route path="contact" element={<Contact />} />
+      <Route path="profile" element={<Profile />} />
+      <Route path="faq" element={<Faq />} />
     </Route>
   )
 );

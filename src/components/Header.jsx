@@ -1,14 +1,17 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
 const Header = () => {
-  const [Mobileopen, setMobileopen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div className="container">
-      <div className="sticky flex justify-between items-center border-2 h-16 ">
+      <div className="fixed top-0 left-0 w-full flex justify-between items-center border-2 h-16 px-8 bg-background ">
         <h1 className="logo">BLOG</h1>
-        <nav className="nav">
+        <nav className="nav px-2 relative ">
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -42,14 +45,6 @@ const Header = () => {
             about
           </NavLink>
           <NavLink
-            to="profile"
-            className={({ isActive }) =>
-              `nav ${isActive ? "text-primary" : "text-gray-500"} `
-            }
-          >
-            profile
-          </NavLink>
-          <NavLink
             to="faq"
             className={({ isActive }) =>
               `nav ${isActive ? "text-primary" : "text-gray-500"} `
@@ -58,18 +53,43 @@ const Header = () => {
             Faq
           </NavLink>
         </nav>
-        <div className="mobile-nav hidden max-md:inline-block  border-2">
+        <div className="mobile-nav border-2">
+          {console.log(isOpen)}
           <button
             onClick={() => {
-              setMobileopen((prev) => !prev);
+              setIsOpen(toggleMenu);
             }}
+            className="hidden max-md:inline-block"
           >
-            {Mobileopen ? (
-              <RxHamburgerMenu size={25} className="text-accent" />
-            ) : (
+            {isOpen ? (
               <RxCross1 size={25} className="text-accent" />
+            ) : (
+              <RxHamburgerMenu size={25} className="text-accent" />
             )}
           </button>
+          <div
+            className={`md:hidden left-0 top-[64px] p-10  w-full bg-slate-100 text-lg font-medium font-poppins text-primary ${
+              isOpen ? "absolute" : "hidden"
+            }`}
+          >
+            <ul className="flex flex-col w-full items-center justify-center gap-8 ">
+              <li className="cursor-pointer" onClick={toggleMenu}>
+                <Link to="/">Home</Link>
+              </li>
+              <li className="cursor-pointer" onClick={toggleMenu}>
+                <Link to="articles">Articles</Link>
+              </li>
+              <li className="cursor-pointer" onClick={toggleMenu}>
+                <Link to="about">about</Link>
+              </li>
+              <li className="cursor-pointer" onClick={toggleMenu}>
+                <Link to="contact">Contact</Link>
+              </li>
+              <li className="cursor-pointer" onClick={toggleMenu}>
+                <Link to="faq">Faq</Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

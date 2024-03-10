@@ -5,7 +5,7 @@ import Header from "../components/Header";
 
 const Layout = () => {
   return (
-    <div className="h-screen w-full bg-background text-text box-border ">
+    <div className="h-screen w-full bg-background text-text box-border relative ">
       <Header />
       <Outlet />
       <Footer />

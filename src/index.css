@@ -20,7 +20,13 @@
     --accent: #1c4aa6;
   }
   h1 {
-    @apply text-4xl font-bold font-poppins text-center inline-block;
+    @apply text-8xl  text-gray-700 font-bold font-poppins text-center inline-block;
+  }
+  h2 {
+    @apply text-6xl  text-gray-600 font-bold font-poppins text-center inline-block;
+  }
+  h3 {
+    @apply text-4xl text-gray-600  font-bold font-poppins text-center inline-block;
   }
 }
 @layer components {

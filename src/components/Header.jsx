@@ -11,6 +11,7 @@ const Header = () => {
     <div className="container">
       <div className="fixed top-0 left-0 w-full flex justify-around items-center border-2 h-16 px-8 bg-background max-md:justify-between ">
         <h1 className="logo">BLOG</h1>
+        {/* this is desktop nav menu */}
         <nav className="nav px-2 relative ">
           <NavLink
             to="/"
@@ -53,7 +54,8 @@ const Header = () => {
             Faq
           </NavLink>
         </nav>
-        <div className="mobile-nav border-2 hidden max-md:block">
+        {/* this is mobile menu */}
+        <div className="mobile-nav border-2 hidden max-md:block ">
           {console.log(isOpen)}
           <button
             onClick={() => {

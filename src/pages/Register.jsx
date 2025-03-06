@@ -1,6 +1,6 @@
 import React from "react";
-import Simplebutton from "../components/Simplebutton";
 import { useNavigate } from "react-router-dom";
+import Simplebutton from "../components/Simplebutton";
 
 const Register = () => {
   const navigate = useNavigate();

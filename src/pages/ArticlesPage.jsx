@@ -47,8 +47,8 @@ const ArticlesPage = () => {
           {/* we are doing link coz we want a new page to open when user click on cards */}
           {articles.map((article) => (
             <Link
-              to={`/artilces/${article.id}`}
-              key={article.id}
+              to={`/articles/${article._id}`} // _id is coming from API instead of id
+              key={article._id} // _id is comeing from api instead of id
               className="group w-[400px] transition-transform duration-200 hover:scale-105" // #phind this later about the "group" thing and why this works as intended
             >
               <ArticleCard article={article} />

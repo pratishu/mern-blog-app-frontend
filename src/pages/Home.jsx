@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className="container h-screen ">
       <div className="flex justify-center items-center h-full flex-col gap-16">
-        <h1 className="font-monstt text-gray-600 ">About This Website:</h1>
+        <h1 className="font-monstt text-gray-600 ">How To Use This Website</h1>
         <h2>
           Go to{" "}
           <Link
@@ -26,6 +26,16 @@ const Home = () => {
                 will persist and written in databases
               </li>
               <li>3. you can create new articles</li>
+              <li>
+                4. Go to{" "}
+                <Link
+                  className="font-semibold font-poppins text-primary cursor-pointer hover:underline"
+                  to={"/About"}
+                >
+                  About
+                </Link>{" "}
+                for more Details About this Website
+              </li>
             </ul>
           </div>
         </div>

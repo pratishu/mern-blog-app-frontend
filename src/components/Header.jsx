@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
 import { Link, NavLink } from "react-router-dom";
-import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +27,7 @@ const Header = () => {
               `nav ${isActive ? "text-primary" : "text-gray-500"} `
             }
           >
-            Article
+            Articles
           </NavLink>
           <NavLink
             to="contact"

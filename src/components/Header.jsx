@@ -55,7 +55,7 @@ const Header = () => {
           </NavLink>
         </nav>
         {/* this is mobile menu */}
-        <div className="mobile-nav border-2 hidden max-md:block ">
+        <div className="mobile-nav  hidden max-md:block ">
           {console.log(isOpen)}
           <button
             onClick={() => {

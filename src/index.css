@@ -40,6 +40,6 @@
     @apply hidden md:flex gap-8 font-medium font-poppins lg:text-lg lg:gap-16 xl:text-xl xl:gap-20;
   }
   .logo {
-    @apply inline-block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-monstt border-2 font-bold max-lg:text-2xl lg:text-3xl xl:text-4xl;
+    @apply inline-block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-monstt  font-bold max-lg:text-2xl lg:text-3xl xl:text-4xl;
   }
 }

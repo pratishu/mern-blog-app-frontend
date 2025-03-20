@@ -58,6 +58,25 @@ const ArticleForm = ({ isEdit = false }) => {
   const handleCancel = () => {
     navigate("/articles");
   };
+  const handleDelete = async () => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this article?"
+    );
+    if (!confirmDelete) return;
+
+    try {
+      const response = await fetch(
+        `http://localhost:3002/article/removeArticle/${id}`,
+        { method: "DELETE" }
+      );
+
+      if (response.ok) {
+        navigate("/articles");
+      }
+    } catch (error) {
+      console.error("Error deleting article:", error);
+    }
+  };
 
   if (loading) return <div>Loading form...</div>;
 
@@ -123,6 +142,17 @@ const ArticleForm = ({ isEdit = false }) => {
           >
             Cancel
           </button>
+
+          {/* Add delete button conditionally */}
+          {isEdit && (
+            <button
+              type="button"
+              onClick={handleDelete}
+              className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 ml-auto"
+            >
+              Delete
+            </button>
+          )}
         </div>
       </form>
     </div>

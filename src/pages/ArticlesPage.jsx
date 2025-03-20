@@ -28,7 +28,7 @@ const ArticlesPage = () => {
     fetchArticles();
   }, []); // only running it once currently the component mounts IE: page loads
   return (
-    <div className="h-screen">
+    <div className="min-h-screen">
       {loading && (
         <div className="flex flex-col items-center justify-center text-8xl h-full ">
           Articles are loading...{" "}
@@ -41,19 +41,31 @@ const ArticlesPage = () => {
         </div>
       )}
       {!error && !loading && (
-        <div className="flex mt-32 flex-wrap gap-6 px-16 justify-center">
-          {" "}
-          {/* flex wrap: for cards to wrap to next line, justify-center: card to show in center, looks good, px16: to have padding instead of margin. */}
-          {/* we are doing link coz we want a new page to open when user click on cards */}
-          {articles.map((article) => (
-            <Link
-              to={`/articles/${article._id}`} // _id is coming from API instead of id
-              key={article._id} // _id is comeing from api instead of id
-              className="group w-[400px] transition-transform duration-200 hover:scale-105" // #phind this later about the "group" thing and why this works as intended
-            >
-              <ArticleCard article={article} />
-            </Link>
-          ))}
+        <div className="flex flex-col gap-8 pt-20 ">
+          {/* this is button to add articles */}
+
+          <Link
+            to="/articles/new"
+            className="bg-blue-500/80 hover:bg-blue-700/80 text-white font-bold py-2 px-4 rounded w-48 mx-auto text-center hover:scale-110 duration-150"
+          >
+            Add New Article
+          </Link>
+
+          {/* // artilces card DIV */}
+          <div className="flex flex-wrap gap-6 px-16 justify-center">
+            {/* flex wrap: for cards to wrap to next line, justify-center: card to show in center, looks good, px16: to have padding instead of margin. */}
+            {/* we are doing link coz we want a new page to open when user click on cards */}
+
+            {articles.map((article) => (
+              <Link
+                to={`/articles/${article._id}`} // _id is coming from API instead of id
+                key={article._id} // _id is comeing from api instead of id
+                className="group w-[400px] transition-transform duration-200 hover:scale-105" // #phind this later about the "group" thing and why this works as intended
+              >
+                <ArticleCard article={article} />
+              </Link>
+            ))}
+          </div>
         </div>
       )}
     </div>

@@ -14,9 +14,6 @@ import Contact from "./pages/Contact.jsx";
 import Faq from "./pages/Faq.jsx";
 import Home from "./pages/Home.jsx";
 import Layout from "./pages/Layout.jsx";
-import Login from "./pages/Login.jsx";
-import Profile from "./pages/Profile.jsx";
-import Register from "./pages/Register.jsx";
 import SingleArticlePage from "./pages/SingleArticlePage.jsx";
 
 const router = createBrowserRouter(
@@ -30,11 +27,15 @@ const router = createBrowserRouter(
         path="/articles/:id/edit"
         element={<ArticleForm isEdit={true} />}
       />
-      <Route path="contact" element={<Contact />} />
-      <Route path="profile" element={<Profile />} />
+
       <Route path="faq" element={<Faq />} />
-      <Route path="register" element={<Register />} />
-      <Route path="Login" element={<Login />} />
+      <Route path="contact" element={<Contact />} />
+      <Route path="/articles/new" element={<ArticleForm />} />
+
+      {/* Commenting those routes which are not required for now */}
+      {/* <Route path="profile" element={<Profile />} /> */}
+      {/* <Route path="register" element={<Register />} /> */}
+      {/* <Route path="Login" element={<Login />} /> */}
     </Route>
   )
 );
